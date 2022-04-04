@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="linear_layout_padding">24dp</dimen>
+    <dimen name="title_text_size">24sp</dimen>
+    <dimen name="button_radius">90dp</dimen>
+    <dimen name="button_layout_margin">4dp</dimen>
+
+    <dimen name="fragment_welcome_screen_spotify_icon_dimens">48dp</dimen>
+    <dimen name="fragment_welcome_screen_spotify_icon_bottom_margin">16dp</dimen>
+    <dimen name="fragment_welcome_screen_title_bottom_margin">34dp</dimen>
+    <dimen name="fragment_welcome_screen_login_link_bottom_margin">46dp</dimen>
+
+</resources>

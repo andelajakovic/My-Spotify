@@ -12,6 +12,10 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorSecondary</item>
         <!-- Customize your theme here. -->
+        <item name="android:background">?attr/colorSecondary</item>
+        <item name="android:textColor">?attr/colorOnSecondary</item>
+        <item name="android:fontFamily">sans-serif-black</item>
+        <item name="android:textAllCaps">false</item>
         <item name="android:windowBackground">?attr/colorSecondary</item>
     </style>
 </resources>

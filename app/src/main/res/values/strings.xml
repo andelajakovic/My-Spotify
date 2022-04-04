@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">My Spotify</string>
+    <string name="login">Prijava</string>
+    <string name="registration">Besplatna registracija</string>
+    <string name="continue_with_google">Nastavi s Googleom</string>
+    <string name="continue_with_facebook">Nastavi s Facebookom</string>
+    <string name="welcome_screen_title">Milijuni pjesama.\nBesplatno na Spotifyju.</string>
+
+    <string name="fragment_welcome_screen_registration_label" translatable="false">@string/registration</string>
+    <string name="fragment_welcome_screen_login_label" translatable="false">@string/login</string>
+    <string name="fragment_welcome_screen_google_label" translatable="false">@string/continue_with_google</string>
+    <string name="fragment_welcome_screen_facebook_label" translatable="false">@string/continue_with_facebook</string>
+    <string name="fragment_welcome_screen_title" translatable="false">@string/welcome_screen_title</string>
 </resources>
