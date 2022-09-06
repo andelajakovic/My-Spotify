@@ -60,6 +60,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/fragment_welcome_screen_login_link_bottom_margin"
         android:text="@string/fragment_welcome_screen_login_label"
+        android:fontFamily="sans-serif-black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

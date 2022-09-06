@@ -4,6 +4,7 @@
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:gravity">center</item>
+        <item name="fontFamily">sans-serif-black</item>
         <item name="android:textSize">@dimen/title_text_size</item>
     </style>
 
@@ -12,6 +13,7 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_margin">@dimen/button_layout_margin</item>
         <item name="android:background">@drawable/primary_button_selector</item>
+        <item name="fontFamily">sans-serif-black</item>
         <item name="backgroundTint">@null</item>
     </style>
 
@@ -21,6 +23,37 @@
         <item name="android:layout_margin">@dimen/button_layout_margin</item>
         <item name="android:background">@drawable/secondary_button_selector</item>
         <item name="android:textColor">?attr/colorOnSecondary</item>
+        <item name="fontFamily">sans-serif-black</item>
         <item name="backgroundTint">@null</item>
     </style>
+
+    <style name="WhiteButtonStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:background">@drawable/white_button_selector</item>
+        <item name="android:clickable">false</item>
+        <item name="fontFamily">sans-serif-black</item>
+        <item name="android:paddingEnd">@dimen/white_button_padding</item>
+        <item name="android:paddingStart">@dimen/white_button_padding</item>
+        <item name="android:textColor">@color/dark_gray</item>
+        <item name="backgroundTint">@null</item>
+    </style>
+
+    <style name="TextInputLayoutStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/fragment_login_text_input_layout_top_margin</item>
+        <item name="android:textColorHint">?attr/colorOnSecondary</item>
+        <item name="boxStrokeColor">?attr/colorPrimary</item>
+    </style>
+
+    <style name="TextInputEditTextStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textColor">?attr/colorOnSecondary</item>
+    </style>
+
+
 </resources>

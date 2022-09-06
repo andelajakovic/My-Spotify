@@ -5,10 +5,25 @@
     <string name="continue_with_google">Nastavi s Googleom</string>
     <string name="continue_with_facebook">Nastavi s Facebookom</string>
     <string name="welcome_screen_title">Milijuni pjesama.\nBesplatno na Spotifyju.</string>
+    <string name="enter_your_email">Koja je vaša adresa e-pošte?</string>
+    <string name="enter_new_password">Izradite novu zaporku</string>
+    <string name="enter_your_name">Kako se zovete?</string>
+    <string name="new_password_helper_text">Upotrijebite najmanje 8 znakova.</string>
+    <string name="create_account">Izradi račun</string>
+
+    <string name="user_already_exists_error_message">Korisnik s ovom adresom već postoji.</string>
+    <string name="unexpected_error_has_occurred_error_message">Došlo je pogreške!</string>
 
     <string name="fragment_welcome_screen_registration_label" translatable="false">@string/registration</string>
     <string name="fragment_welcome_screen_login_label" translatable="false">@string/login</string>
     <string name="fragment_welcome_screen_google_label" translatable="false">@string/continue_with_google</string>
     <string name="fragment_welcome_screen_facebook_label" translatable="false">@string/continue_with_facebook</string>
     <string name="fragment_welcome_screen_title" translatable="false">@string/welcome_screen_title</string>
+
+    <string name="fragment_signup_email_label" translatable="false">@string/enter_your_email</string>
+    <string name="fragment_signup_new_password_label" translatable="false">@string/enter_new_password</string>
+    <string name="fragment_signup_name_label" translatable="false">@string/enter_your_name</string>
+    <string name="fragment_signup_new_password_helper_text" translatable="false">@string/new_password_helper_text</string>
+    <string name="fragment_signup_create_account_label" translatable="false">@string/create_account</string>
+
 </resources>

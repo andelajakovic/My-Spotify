@@ -21,5 +21,23 @@
     <fragment
         android:id="@+id/welcomeFragment"
         android:name="com.example.myspotify.ui.prelogin.welcome.WelcomeFragment"
-        android:label="WelcomeFragment" />
+        android:label="WelcomeFragment" >
+        <action
+            android:id="@+id/action_welcomeFragment_to_signupFragment"
+            app:destination="@id/signupFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signupFragment"
+        android:name="com.example.myspotify.ui.prelogin.signup.SignupFragment"
+        android:label="fragment_signup"
+        tools:layout="@layout/fragment_signup" >
+        <action
+            android:id="@+id/action_signupFragment_to_chooseArtistsFragment"
+            app:destination="@id/chooseArtistsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chooseArtistsFragment"
+        android:name="com.example.myspotify.ui.prelogin.artists.ChooseArtistsFragment"
+        android:label="fragment_choose_artists"
+        tools:layout="@layout/fragment_choose_artists" />
 </navigation>
