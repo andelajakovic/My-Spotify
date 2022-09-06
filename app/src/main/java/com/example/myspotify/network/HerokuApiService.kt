@@ -17,4 +17,9 @@ interface HerokuApiService {
     suspend fun registerUser(
         @Body post: User
     ): User
+
+    @POST("users/login")
+    suspend fun loginUser(
+        @Body post: User
+    ): List<User>
 }

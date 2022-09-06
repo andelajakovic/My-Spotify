@@ -10,6 +10,9 @@
     <string name="enter_your_name">Kako se zovete?</string>
     <string name="new_password_helper_text">Upotrijebite najmanje 8 znakova.</string>
     <string name="create_account">Izradi račun</string>
+    <string name="email">E-pošta</string>
+    <string name="password">Zaporka</string>
+    <string name="login_error_message">Pogrešna adresa e-pošte ili zaporka</string>
 
     <string name="user_already_exists_error_message">Korisnik s ovom adresom već postoji.</string>
     <string name="unexpected_error_has_occurred_error_message">Došlo je pogreške!</string>
@@ -25,5 +28,10 @@
     <string name="fragment_signup_name_label" translatable="false">@string/enter_your_name</string>
     <string name="fragment_signup_new_password_helper_text" translatable="false">@string/new_password_helper_text</string>
     <string name="fragment_signup_create_account_label" translatable="false">@string/create_account</string>
+
+    <string name="fragment_login_email_label" translatable="false">@string/email</string>
+    <string name="fragment_login_password_label" translatable="false">@string/password</string>
+    <string name="fragment_login_login_label" translatable="false">@string/login</string>
+    <string name="fragment_login_error_message" translatable="false">@string/login_error_message</string>
 
 </resources>

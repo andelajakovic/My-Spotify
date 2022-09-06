@@ -7,4 +7,7 @@ object Config {
 
     // Network
     const val HEROKU_API_BASE_URL = "https://my-spotify-web-api.herokuapp.com/"
+
+    // Shared Preferences
+    const val SHARED_PREFERENCES_NAME = "shared_prefs"
 }

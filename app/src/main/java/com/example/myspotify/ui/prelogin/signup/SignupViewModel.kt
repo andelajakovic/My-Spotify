@@ -1,10 +1,12 @@
 package com.example.myspotify.ui.prelogin.signup
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.myspotify.Config
+import com.example.myspotify.data.local.ApplicationStorage
 import com.example.myspotify.data.model.User
 import com.example.myspotify.network.HerokuApiService
 import com.example.myspotify.ui.state.ButtonState
@@ -17,7 +19,10 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class SignupViewModel @Inject constructor(private val herokuApiService: HerokuApiService) : ViewModel() {
+class SignupViewModel @Inject constructor(
+    private val herokuApiService: HerokuApiService,
+    private val applicationStorage: ApplicationStorage
+) : ViewModel() {
 
     private val _signupState = MutableLiveData<SignupState>()
     val signupState: LiveData<SignupState> = _signupState
@@ -42,8 +47,10 @@ class SignupViewModel @Inject constructor(private val herokuApiService: HerokuAp
         if (userExists(user)) {
             _signupState.postValue(SignupState(isSuccess = false, error = SignupError.USER_ALREADY_EXISTS))
         } else {
-            registerUser(user)
+            val registeredUser = registerUser(user)
+            applicationStorage.storeLoggedInUserId(registeredUser.id)
             _signupState.postValue(SignupState(isSuccess = true))
+            Log.d("Session user id", applicationStorage.getLoggedInUserId().toString())
         }
     }
 

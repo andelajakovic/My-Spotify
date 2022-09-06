@@ -32,6 +32,7 @@ class WelcomeFragment : Fragment() {
 
     private fun initListeners() {
         binding.loginLink.setOnClickListener {
+            findNavController().navigate(WelcomeFragmentDirections.actionWelcomeFragmentToLoginFragment())
         }
 
         binding.registerLink.setOnClickListener {

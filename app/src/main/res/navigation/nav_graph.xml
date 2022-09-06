@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/splashFragment"
-        android:name="com.example.myspotify.SplashFragment"
+        android:name="com.example.myspotify.ui.prelogin.splash.SplashFragment"
         android:label="fragment_splash"
         tools:layout="@layout/fragment_splash" >
         <action
@@ -25,6 +25,9 @@
         <action
             android:id="@+id/action_welcomeFragment_to_signupFragment"
             app:destination="@id/signupFragment" />
+        <action
+            android:id="@+id/action_welcomeFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
     </fragment>
     <fragment
         android:id="@+id/signupFragment"
@@ -40,4 +43,9 @@
         android:name="com.example.myspotify.ui.prelogin.artists.ChooseArtistsFragment"
         android:label="fragment_choose_artists"
         tools:layout="@layout/fragment_choose_artists" />
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.myspotify.ui.prelogin.login.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" />
 </navigation>
