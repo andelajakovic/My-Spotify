@@ -1,14 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingEnd="@dimen/constraint_layout_padding"
+    android:paddingStart="@dimen/constraint_layout_padding"
+    android:paddingTop="@dimen/constraint_layout_padding"
+    android:focusable="false"
     tools:context=".ui.prelogin.artists.ChooseArtistsFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Choose Artists Fragment" />
+    <Button
+        android:id="@+id/next_button"
+        style="@style/WhiteButtonStyle"
+        android:layout_marginBottom="@dimen/constraint_layout_padding"
+        android:text="@string/fragment_choose_artists_button_label"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/title"
+        style="@style/TitleStyle"
+        android:layout_width="@dimen/fragment_choose_artists_title_width"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:text="@string/fragment_choose_artists_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <SearchView
+        android:id="@+id/search_view"
+        style="@style/SearchViewStyle"
+        android:layout_marginTop="@dimen/fragment_choose_artists_search_edit_text_top_margin"
+        android:queryHint="@string/fragment_choose_artists_search_label"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/artists_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/fragment_choose_artists_recycler_view_top_margin"
+        android:clipToPadding="false"
+        tools:listitem="@layout/artist_view"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/search_view"
+        app:spanCount="3" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/search_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/fragment_choose_artists_recycler_view_top_margin"
+        android:clipToPadding="false"
+        android:visibility="gone"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/search_view" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:theme="@style/ProgressBarStyle"
+        android:layout_width="@dimen/fragment_choose_artists_progress_bar_dimens"
+        android:layout_height="@dimen/fragment_choose_artists_progress_bar_dimens"
+        android:layout_marginTop="@dimen/fragment_choose_artists_recycler_view_top_margin"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@+id/search_view"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

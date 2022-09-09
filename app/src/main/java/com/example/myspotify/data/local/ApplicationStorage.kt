@@ -12,6 +12,7 @@ class ApplicationStorage (private val sharedPreferences: SharedPreferences) {
     fun storeLoggedInUserId(id: Long) = saveLong(KEY_USER_ID, id)
     fun getLoggedInUserId() = getLong(KEY_USER_ID)
     fun isLoggedIn(): Boolean = getLoggedInUserId() > 0
+    fun setArtistsChosen(isArtistChosen: Boolean) = saveBoolean(KEY_ARTISTS_CHOSEN_FLAG, isArtistChosen)
 
     private fun getLong(key: String, defaultValue: Long = 0L): Long {
         return sharedPreferences.getLong(key, defaultValue)

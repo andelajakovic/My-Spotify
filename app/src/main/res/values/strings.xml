@@ -13,6 +13,9 @@
     <string name="email">E-pošta</string>
     <string name="password">Zaporka</string>
     <string name="login_error_message">Pogrešna adresa e-pošte ili zaporka</string>
+    <string name="choose_artists_you_like">Odaberite 3 ili više izvođača koji vam se sviđaju.</string>
+    <string name="search">Tražilica</string>
+    <string name="next">Dalje</string>
 
     <string name="user_already_exists_error_message">Korisnik s ovom adresom već postoji.</string>
     <string name="unexpected_error_has_occurred_error_message">Došlo je pogreške!</string>
@@ -33,5 +36,9 @@
     <string name="fragment_login_password_label" translatable="false">@string/password</string>
     <string name="fragment_login_login_label" translatable="false">@string/login</string>
     <string name="fragment_login_error_message" translatable="false">@string/login_error_message</string>
+
+    <string name="fragment_choose_artists_title" translatable="false">@string/choose_artists_you_like</string>
+    <string name="fragment_choose_artists_search_label" translatable="false">@string/search</string>
+    <string name="fragment_choose_artists_button_label" translatable="false">@string/next</string>
 
 </resources>

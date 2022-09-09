@@ -1,5 +1,6 @@
 package com.example.myspotify.network
 
+import com.example.myspotify.data.model.ArtistFollowedByUser
 import com.example.myspotify.data.model.User
 import retrofit2.Call
 import retrofit2.http.Body
@@ -22,4 +23,9 @@ interface HerokuApiService {
     suspend fun loginUser(
         @Body post: User
     ): List<User>
+
+    @POST("users/follow")
+    suspend fun followArtist(
+        @Body post: ArtistFollowedByUser
+    ): ArtistFollowedByUser
 }

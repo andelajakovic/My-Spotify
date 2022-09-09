@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/item_view_padding">
+
+    <ImageView
+        android:id="@+id/artist_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@tools:sample/backgrounds/scenic" />
+
+    <ImageView
+        android:id="@+id/check_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/white_button"
+        android:padding="@dimen/artist_view_check_icon_padding"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@id/artist_image"
+        app:layout_constraintTop_toTopOf="@id/artist_image"
+        app:srcCompat="@drawable/check_icon" />
+
+    <TextView
+        android:id="@+id/artist_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/item_view_name_top_margin"
+        android:gravity="center"
+        android:fontFamily="sans-serif-black"
+        app:layout_constraintEnd_toEndOf="@id/artist_image"
+        app:layout_constraintStart_toStartOf="@id/artist_image"
+        app:layout_constraintTop_toBottomOf="@id/artist_image" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
