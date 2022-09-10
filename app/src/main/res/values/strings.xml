@@ -41,4 +41,9 @@
     <string name="fragment_choose_artists_search_label" translatable="false">@string/search</string>
     <string name="fragment_choose_artists_button_label" translatable="false">@string/next</string>
 
+    <string name="bottom_navigation_menu_search_label">Pretraži</string>
+    <string name="bottom_navigation_menu_home_label">Početna</string>
+    <string name="bottom_navigation_menu_my_library_label">Moja zbirka</string>
+    <string name="bottom_navigation_menu_logout_label">Odjava</string>
+
 </resources>

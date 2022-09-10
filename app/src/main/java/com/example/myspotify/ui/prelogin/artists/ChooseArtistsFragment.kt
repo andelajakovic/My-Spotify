@@ -9,6 +9,7 @@ import android.widget.SearchView
 import android.widget.Toast
 import androidx.activity.addCallback
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.example.myspotify.R
 import com.example.myspotify.databinding.FragmentChooseArtistsBinding
 import com.example.myspotify.ui.prelogin.artists.adapter.ArtistAdapter
@@ -107,9 +108,8 @@ class ChooseArtistsFragment : Fragment() {
                     activity?.finish()
                 }
                 NavigationState.NAVIGATE_TO_HOME_ACTIVITY -> {
-//                    val action = TODO
-//                    findNavController().navigate(action)
-//                    activity?.finish()
+                    findNavController().navigate(ChooseArtistsFragmentDirections.actionChooseArtistsFragmentToHomeActivity())
+                    activity?.finish()
                 }
                 else -> {
                     // no-op

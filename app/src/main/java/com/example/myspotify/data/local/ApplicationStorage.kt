@@ -13,6 +13,7 @@ class ApplicationStorage (private val sharedPreferences: SharedPreferences) {
     fun getLoggedInUserId() = getLong(KEY_USER_ID)
     fun isLoggedIn(): Boolean = getLoggedInUserId() > 0
     fun setArtistsChosen(isArtistChosen: Boolean) = saveBoolean(KEY_ARTISTS_CHOSEN_FLAG, isArtistChosen)
+    fun isArtistsChosen() = getBoolean(KEY_ARTISTS_CHOSEN_FLAG)
 
     private fun getLong(key: String, defaultValue: Long = 0L): Long {
         return sharedPreferences.getLong(key, defaultValue)
@@ -24,11 +25,11 @@ class ApplicationStorage (private val sharedPreferences: SharedPreferences) {
             .apply()
     }
 
-    fun getBoolean(key: String, defaultValue: Boolean): Boolean {
+    private fun getBoolean(key: String, defaultValue: Boolean = false): Boolean {
         return sharedPreferences.getBoolean(key, defaultValue)
     }
 
-    fun saveBoolean(key: String, value: Boolean) {
+    private fun saveBoolean(key: String, value: Boolean) {
         return sharedPreferences.edit()
             .putBoolean(key, value)
             .apply()

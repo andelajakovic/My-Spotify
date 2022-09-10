@@ -64,9 +64,8 @@ class LoginFragment : Fragment() {
         viewModel.loginState.observe(this.viewLifecycleOwner) {
             when {
                 it.isUserVerified -> {
-//                    val action = TODO
-//                    findNavController().navigate(action)
-//                    activity?.finish()
+                    findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToHomeActivity())
+                    activity?.finish()
                 }
                 else -> {
                     binding.emailTextInputLayout.error = getString(R.string.fragment_login_error_message)

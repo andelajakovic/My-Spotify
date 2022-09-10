@@ -11,6 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MySpotify">
         <activity
+            android:name=".ui.postlogin.HomeActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.prelogin.MainActivity"
             android:exported="true">
             <intent-filter>

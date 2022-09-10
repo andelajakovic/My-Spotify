@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/chooseArtistsFragment">
+    app:startDestination="@id/splashFragment">
 
     <fragment
         android:id="@+id/splashFragment"
@@ -17,11 +17,18 @@
             app:exitAnim="@android:anim/fade_out"
             app:popUpTo="@id/nav_graph"
             app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_splashFragment_to_homeActivity"
+            app:destination="@id/homeActivity" />
+        <action
+            android:id="@+id/action_splashFragment_to_chooseArtistsFragment"
+            app:destination="@id/chooseArtistsFragment" />
     </fragment>
     <fragment
         android:id="@+id/welcomeFragment"
         android:name="com.example.myspotify.ui.prelogin.welcome.WelcomeFragment"
-        android:label="WelcomeFragment" >
+        android:label="WelcomeFragment"
+        tools:layout="@layout/fragment_welcome">
         <action
             android:id="@+id/action_welcomeFragment_to_signupFragment"
             app:destination="@id/signupFragment" />
@@ -42,10 +49,23 @@
         android:id="@+id/chooseArtistsFragment"
         android:name="com.example.myspotify.ui.prelogin.artists.ChooseArtistsFragment"
         android:label="fragment_choose_artists"
-        tools:layout="@layout/fragment_choose_artists" />
+        tools:layout="@layout/fragment_choose_artists" >
+        <action
+            android:id="@+id/action_chooseArtistsFragment_to_homeActivity"
+            app:destination="@id/homeActivity" />
+    </fragment>
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.example.myspotify.ui.prelogin.login.LoginFragment"
         android:label="fragment_login"
-        tools:layout="@layout/fragment_login" />
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_homeActivity"
+            app:destination="@id/homeActivity" />
+    </fragment>
+    <activity
+        android:id="@+id/homeActivity"
+        android:name="com.example.myspotify.ui.postlogin.HomeActivity"
+        android:label="activity_home"
+        tools:layout="@layout/activity_home" />
 </navigation>
