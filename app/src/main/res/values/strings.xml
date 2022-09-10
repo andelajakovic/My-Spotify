@@ -16,6 +16,9 @@
     <string name="choose_artists_you_like">Odaberite 3 ili više izvođača koji vam se sviđaju.</string>
     <string name="search">Tražilica</string>
     <string name="next">Dalje</string>
+    <string name="recommended_albums">Albumi vaših omiljenih izvođača</string>
+    <string name="new_releases">Nova izdanja</string>
+    <string name="recommended_artists">Preporučeni izvođači</string>
 
     <string name="user_already_exists_error_message">Korisnik s ovom adresom već postoji.</string>
     <string name="unexpected_error_has_occurred_error_message">Došlo je pogreške!</string>
@@ -45,5 +48,9 @@
     <string name="bottom_navigation_menu_home_label">Početna</string>
     <string name="bottom_navigation_menu_my_library_label">Moja zbirka</string>
     <string name="bottom_navigation_menu_logout_label">Odjava</string>
+
+    <string name="fragment_home_recommended_albums_label" translatable="false">@string/recommended_albums</string>
+    <string name="fragment_home_new_releases_label" translatable="false">@string/new_releases</string>
+    <string name="fragment_home_recommended_artists_label" translatable="false">@string/recommended_artists</string>
 
 </resources>

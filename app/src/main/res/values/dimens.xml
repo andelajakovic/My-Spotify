@@ -41,4 +41,9 @@
     <dimen name="search_item_view_name_start_margin">@dimen/margin_small</dimen>
     <dimen name="search_item_view_padding">8dp</dimen>
 
+    <dimen name="fragment_home_layout_top_margin">@dimen/margin_normal</dimen>
+    <dimen name="fragment_home_title_start_margin">@dimen/margin_normal</dimen>
+    <dimen name="fragment_home_title_top_margin">@dimen/margin_normal</dimen>
+    <dimen name="fragment_home_recycler_view_padding">@dimen/margin_small</dimen>
+
 </resources>

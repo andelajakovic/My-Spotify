@@ -3,10 +3,7 @@ package com.example.myspotify.network
 import com.example.myspotify.data.model.ArtistFollowedByUser
 import com.example.myspotify.data.model.User
 import retrofit2.Call
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.POST
-import retrofit2.http.Path
+import retrofit2.http.*
 
 interface HerokuApiService {
     @POST("users/exits")
@@ -28,4 +25,9 @@ interface HerokuApiService {
     suspend fun followArtist(
         @Body post: ArtistFollowedByUser
     ): ArtistFollowedByUser
+
+    @GET("users/{user_id}/followings/")
+    suspend fun getUsersFollowings(
+        @Path("user_id") userId: Long
+    ): List<ArtistFollowedByUser>
 }
