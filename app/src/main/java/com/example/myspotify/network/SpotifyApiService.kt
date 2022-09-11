@@ -21,6 +21,11 @@ interface SpotifyApiService {
         @Query("q") query: String
     ): ApiArtistQueryResponse
 
+    @GET("search?type=album")
+    suspend fun searchAlbums(
+        @Header("Authorization") authorizationValue: String,
+        @Query("q") query: String
+    ): ApiAlbumQueryResponse
 
     @GET("browse/new-releases?limit=10")
     suspend fun getNewReleases(
