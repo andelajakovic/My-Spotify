@@ -7,7 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.SearchView
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.example.myspotify.R
+import com.example.myspotify.data.model.Artist
 import com.example.myspotify.databinding.FragmentSearchBinding
 import com.example.myspotify.ui.postlogin.search.adapter.SearchAdapter
 import dagger.hilt.android.AndroidEntryPoint
@@ -39,7 +41,19 @@ class SearchFragment : Fragment() {
 
         searchAdapter = SearchAdapter(SearchAdapter.OnClickListener {
 //            viewModel.onSearchArtistSelected(it)
-            resetSearchView()
+            if (it.type == "artist") {
+                findNavController().navigate(
+                    SearchFragmentDirections.actionSearchFragmentToArtistDetailsFragment(
+                        Artist(
+                            id = it.id,
+                            imageUrl = it.imageUrl,
+                            name = it.name,
+                            followers = it.followers
+                        )
+                    )
+                )
+            }
+//            resetSearchView()
         })
     }
 

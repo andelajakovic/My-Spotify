@@ -19,6 +19,10 @@
     <string name="recommended_albums">Albumi vaših omiljenih izvođača</string>
     <string name="new_releases">Nova izdanja</string>
     <string name="recommended_artists">Preporučeni izvođači</string>
+    <string name="follow">Prati</string>
+    <string name="unfollow">Pratim</string>
+    <string name="number_of_followers">Broj pratitelja: %s</string>
+    <string name="popular_releases">Popularna izdanja</string>
 
     <string name="user_already_exists_error_message">Korisnik s ovom adresom već postoji.</string>
     <string name="unexpected_error_has_occurred_error_message">Došlo je pogreške!</string>
@@ -52,5 +56,10 @@
     <string name="fragment_home_recommended_albums_label" translatable="false">@string/recommended_albums</string>
     <string name="fragment_home_new_releases_label" translatable="false">@string/new_releases</string>
     <string name="fragment_home_recommended_artists_label" translatable="false">@string/recommended_artists</string>
+
+    <string name="fragment_artist_details_follow_button_label" translatable="false">@string/follow</string>
+    <string name="fragment_artist_details_unfollow_button_label" translatable="false">@string/unfollow</string>
+    <string name="fragment_artist_details_number_of_followers_label" translatable="false">@string/number_of_followers</string>
+    <string name="fragment_artist_details_popular_releases_title" translatable="false">@string/popular_releases</string>
 
 </resources>

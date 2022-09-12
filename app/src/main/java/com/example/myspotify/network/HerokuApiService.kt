@@ -5,6 +5,7 @@ import com.example.myspotify.data.model.User
 import retrofit2.Call
 import retrofit2.http.*
 
+
 interface HerokuApiService {
     @POST("users/exits")
     suspend fun checkIfUserExists(
@@ -30,4 +31,12 @@ interface HerokuApiService {
     suspend fun getUsersFollowings(
         @Path("user_id") userId: Long
     ): List<ArtistFollowedByUser>
+
+
+    @DELETE("users/{user_id}/unfollow/{artist_id}")
+    fun unfollowArtist(
+        @Path("user_id") userId: Long?,
+        @Path("artist_id") artist_id: String?
+    ): Call<ArtistFollowedByUser>
+
 }

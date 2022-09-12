@@ -71,10 +71,11 @@ class HomeViewModel @Inject constructor(
 
     private suspend fun getAlbumsFromLikedArtists(): MutableList<Album> {
         val albums: MutableList<Album> = mutableListOf()
+        Log.d("Access token value", accessToken.value)
         for (artistId in likedArtistIds) {
             albums.addAll(spotifyApiService.getArtistAlbums("${accessToken.type} ${accessToken.value}", artistId).items.map {
                 Album(id = it.id, imageUrl = it.images.firstOrNull()?.url, name = it.name, artists = it.artists.map { artist ->
-                    Artist(id = artist.id, imageUrl = artist.images?.firstOrNull()?.url, name = artist.name)
+                    Artist(id = artist.id, imageUrl = artist.images?.firstOrNull()?.url, name = artist.name, followers = artist.followers?.total)
                 }, type = it.type, releaseDate = it.releaseDate)
             })
         }
@@ -85,7 +86,7 @@ class HomeViewModel @Inject constructor(
     private suspend fun getNewReleases(): MutableList<Album> {
         return spotifyApiService.getNewReleases("${accessToken.type} ${accessToken.value}").albums.items.map {
             Album(id = it.id, imageUrl = it.images.firstOrNull()?.url, name = it.name, artists = it.artists.map { artist ->
-                Artist(id = artist.id, imageUrl = artist.images?.firstOrNull()?.url, name = artist.name)
+                Artist(id = artist.id, imageUrl = artist.images?.firstOrNull()?.url, name = artist.name, followers = artist.followers?.total)
             }, type = it.type, releaseDate = it.releaseDate)
         }.toMutableList()
     }
@@ -99,7 +100,8 @@ class HomeViewModel @Inject constructor(
             Artist(
                 id = it.id,
                 imageUrl = it.images?.firstOrNull()?.url,
-                name = it.name
+                name = it.name,
+                followers = it.followers?.total
             )
         }
     }

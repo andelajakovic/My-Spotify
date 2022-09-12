@@ -29,6 +29,8 @@
             android:paddingEnd="32dp"
             android:paddingStart="32dp"
             android:text="Izvođači"
+            android:minHeight="0dp"
+            android:textSize="10sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/search_view" />
 
@@ -40,6 +42,8 @@
             style="@style/SecondaryButtonStyle"
             android:paddingStart="32dp"
             android:paddingEnd="32dp"
+            android:minHeight="0dp"
+            android:textSize="10sp"
             app:layout_constraintStart_toEndOf="@+id/artist_filter_button"
             app:layout_constraintTop_toBottomOf="@+id/search_view" />
     </LinearLayout>
@@ -51,7 +55,7 @@
         android:layout_height="match_parent"
         android:layout_marginTop="16dp"
         android:clipToPadding="false"
-        android:paddingBottom="64dp"
+        android:paddingBottom="48dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

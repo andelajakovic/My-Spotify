@@ -76,7 +76,7 @@ class ChooseArtistsViewModel @Inject constructor(
 
     private suspend fun getRelatedArtists(referencedArtistId: String): List<ArtistState> {
         return spotifyApiService.getArtists("${accessToken.type} ${accessToken.value}", referencedArtistId).artists.map {
-            ArtistState(artist = Artist(id = it.id, imageUrl = it.images?.firstOrNull()?.url, name = it.name))
+            ArtistState(artist = Artist(id = it.id, imageUrl = it.images?.firstOrNull()?.url, name = it.name, followers = it.followers?.total))
         }.filterNot {
             getSelectedArtists().map { artist ->
                 artist.artist.id
@@ -139,7 +139,7 @@ class ChooseArtistsViewModel @Inject constructor(
             (spotifyApiService.searchArtists("${accessToken.type} ${accessToken.value}", query).artists.items.filter {
                 !(getSelectedArtists().any { artist -> artist.artist.id == it.id })
             }).map {
-                ArtistState(artist = Artist(id = it.id, imageUrl = it.images?.firstOrNull()?.url, name = it.name))
+                ArtistState(artist = Artist(id = it.id, imageUrl = it.images?.firstOrNull()?.url, name = it.name, followers = it.followers?.total))
             })
 
         _artists.value = _artists.value?.copy(isVisible = false)

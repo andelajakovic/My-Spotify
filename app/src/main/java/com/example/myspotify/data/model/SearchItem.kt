@@ -4,5 +4,6 @@ data class SearchItem(
     val id: String,
     val name: String,
     val type: String,
-    val imageUrl: String?
+    val imageUrl: String?,
+    val followers: Int? = 0
 )

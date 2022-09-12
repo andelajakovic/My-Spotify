@@ -46,4 +46,10 @@
     <dimen name="fragment_home_title_top_margin">@dimen/margin_normal</dimen>
     <dimen name="fragment_home_recycler_view_padding">@dimen/margin_small</dimen>
 
+    <dimen name="fragment_artist_details_followers_label_top_margin">@dimen/margin_normal</dimen>
+    <dimen name="fragment_artist_details_follow_button_top_margin">@dimen/margin_small</dimen>
+    <dimen name="fragment_artist_details_tracks_top_margin">@dimen/margin_large</dimen>
+    <dimen name="fragment_artist_details_albums_top_margin">@dimen/margin_xlarge</dimen>
+    <dimen name="fragment_artist_details_start_margin">@dimen/margin_normal</dimen>
+
 </resources>

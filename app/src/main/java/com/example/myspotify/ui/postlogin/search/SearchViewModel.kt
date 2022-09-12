@@ -64,7 +64,7 @@ class SearchViewModel @Inject constructor(
         val searchList = mutableListOf<SearchItem>()
         searchList.addAll(
             (spotifyApiService.searchArtists("${accessToken.type} ${accessToken.value}", query).artists.items.map {
-                SearchItem(id = it.id, name = it.name, type = it.type, imageUrl = it.images?.firstOrNull()?.url)
+                SearchItem(id = it.id, name = it.name, type = it.type, imageUrl = it.images?.firstOrNull()?.url, followers = it.followers?.total)
             })
         )
 
@@ -86,7 +86,7 @@ class SearchViewModel @Inject constructor(
         val searchList = mutableListOf<SearchItem>()
         searchList.addAll(
             (spotifyApiService.searchArtists("${accessToken.type} ${accessToken.value}", query).artists.items.map {
-                SearchItem(id = it.id, name = it.name, type = it.type, imageUrl = it.images?.firstOrNull()?.url)
+                SearchItem(id = it.id, name = it.name, type = it.type, imageUrl = it.images?.firstOrNull()?.url, followers = it.followers?.total)
             })
         )
 
@@ -97,7 +97,7 @@ class SearchViewModel @Inject constructor(
         )
 
         searchList.shuffle()
-        _searchedItems.value = searchList.subList(0, (searchList.size + 1) / 2)
+        _searchedItems.value = searchList
 
     }
 

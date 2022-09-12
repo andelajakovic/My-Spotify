@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.example.myspotify.databinding.FragmentHomeBinding
 import com.example.myspotify.R
 import com.example.myspotify.ui.state.LoadingState
@@ -40,7 +41,7 @@ class HomeFragment : Fragment() {
 
     private fun initAdapters() {
         recommendedArtistAdapter = RecommendedArtistAdapter(RecommendedArtistAdapter.OnClickListener {
-//            findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToArtistFragment(it))
+            findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToArtistDetailsFragment(it))
         })
 
         newReleasesAdapter = AlbumAdapter(AlbumAdapter.OnClickListener {

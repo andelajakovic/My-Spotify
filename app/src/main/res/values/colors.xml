@@ -15,7 +15,7 @@
     <!-- Secondary colors -->
     <color name="dark_gray">#FF212121</color>
     <color name="gray">#FF484848</color>
-    <color name="light_gray">#FF484848</color>
+    <color name="light_gray">#848484</color>
 
     <color name="error_color">#FFDD0000</color>
 
