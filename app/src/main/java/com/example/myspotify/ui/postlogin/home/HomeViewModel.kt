@@ -51,11 +51,16 @@ class HomeViewModel @Inject constructor(
     }
 
     private fun initLists() {
+        Log.d("Access token value", accessToken.value)
         viewModelScope.launch {
             _loadingState.value = LoadingState.LOADING
             try {
                 likedArtistIds = getLikedArtists()
-                _albumsFromLikedArtists.value = getAlbumsFromLikedArtists()
+                if (likedArtistIds.isNotEmpty()) {
+                    _albumsFromLikedArtists.value = getAlbumsFromLikedArtists()
+                } else {
+                    _albumsFromLikedArtists.value = mutableListOf()
+                }
                 _newReleases.value = getNewReleases()
                 _recommendedArtists.value = getRecommendedArtists()
                 _loadingState.value = LoadingState.DONE
@@ -92,7 +97,9 @@ class HomeViewModel @Inject constructor(
     }
 
     private suspend fun getRecommendedArtists(): MutableList<Artist> {
-        return getRelatedArtists(likedArtistIds.random()).toMutableList()
+        if (likedArtistIds.isNotEmpty())
+            return getRelatedArtists(likedArtistIds.random()).toMutableList()
+        else return getRelatedArtists(Config.RELATED_ARTISTS_ID).toMutableList()
     }
 
     private suspend fun getRelatedArtists(relatedArtistsId: String): List<Artist> {

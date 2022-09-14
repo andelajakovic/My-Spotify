@@ -37,7 +37,7 @@ interface HerokuApiService {
     @DELETE("users/{user_id}/unfollow/{artist_id}")
     fun unfollowArtist(
         @Path("user_id") userId: Long?,
-        @Path("album_id") album_id: String?
+        @Path("artist_id") artistId: String?
     ): Call<ArtistFollowedByUser>
 
     @POST("users/like")

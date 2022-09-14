@@ -1,5 +1,6 @@
-package com.example.myspotify.ui.postlogin.album.adapter
+package com.example.myspotify.ui.postlogin.library.adapter
 
+import android.provider.Settings.Global.getString
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
@@ -9,21 +10,35 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.example.myspotify.R
 import com.example.myspotify.data.model.Artist
-import com.example.myspotify.databinding.SearchItemViewBinding
+import com.example.myspotify.databinding.FavoriteArtistViewBinding
 
-class ArtistAdapter(private val onClickListener: ArtistAdapter.OnClickListener) : ListAdapter<Artist, ArtistAdapter.ArtistViewHolder>(DiffCallback) {
 
-    inner class ArtistViewHolder(
-        private var binding: SearchItemViewBinding
+class FavoriteArtistAdapter(private val onClickListener: OnClickListener, private val onFollowButtonClickListener: OnClickListener) : ListAdapter<Artist, FavoriteArtistAdapter.FavoriteArtistViewHolder>(DiffCallback) {
+
+    inner class FavoriteArtistViewHolder(
+        private var binding: FavoriteArtistViewBinding
     ) : RecyclerView.ViewHolder(binding.root) {
         private fun bind(artist: Artist) {
-            binding.itemName.text = artist.name
+            binding.name.text = artist.name
+
+            if (artist.isUserFollowing) {
+                binding.followButton.setBackgroundResource(R.drawable.follow_button_pressed)
+                binding.followButton.setText(R.string.fragment_artist_details_unfollow_button_label)
+            } else {
+                binding.followButton.setBackgroundResource(R.drawable.follow_button_selector)
+                binding.followButton.setText(R.string.fragment_artist_details_follow_button_label)
+            }
+
             Glide.with(binding.root)
                 .load(artist.imageUrl)
                 .centerCrop()
                 .fallback(R.drawable.artist_image_fallback)
                 .apply(RequestOptions.circleCropTransform())
                 .into(binding.itemImage)
+
+            binding.followButton.setOnClickListener {
+                onFollowButtonClickListener.onClick(artist)
+            }
         }
 
         fun updateView(position: Int) {
@@ -31,6 +46,7 @@ class ArtistAdapter(private val onClickListener: ArtistAdapter.OnClickListener) 
             bind(artist)
             itemView.setOnClickListener {
                 onClickListener.onClick(artist)
+                bind(artist)
             }
         }
     }
@@ -38,18 +54,27 @@ class ArtistAdapter(private val onClickListener: ArtistAdapter.OnClickListener) 
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): ArtistViewHolder {
-        return ArtistViewHolder(
-            SearchItemViewBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+    ): FavoriteArtistViewHolder {
+        return FavoriteArtistViewHolder(
+            FavoriteArtistViewBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         )
     }
 
-    override fun onBindViewHolder(holder: ArtistViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: FavoriteArtistViewHolder, position: Int) {
         holder.updateView(position)
+    }
+
+    override fun getItemId(position: Int): Long {
+        return position.toLong()
+    }
+
+    override fun getItemViewType(position: Int): Int {
+        return position
     }
 
     fun updateData(data: MutableList<Artist>) {
         submitList(data)
+        notifyDataSetChanged()
     }
 
     companion object DiffCallback : DiffUtil.ItemCallback<Artist>() {

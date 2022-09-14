@@ -39,9 +39,11 @@ class AlbumViewModel @Inject constructor(
     }
 
     fun initAlbum(album: Album) {
+        Log.d("Access token value", accessToken.value)
+
         viewModelScope.launch {
+            _loadingState.value = LoadingState.LOADING
             try {
-                Log.d("Access token value", accessToken.value)
 
                 val usersLikings = herokuApiService.getUsersLikings(applicationStorage.getLoggedInUserId())
                 val isUserLiking = usersLikings.any {
@@ -54,15 +56,17 @@ class AlbumViewModel @Inject constructor(
                 _album.value = Album(id = album.id, imageUrl = album.imageUrl, name = album.name, artists = artists.artists.map { artist ->
                     Artist(id = artist.id, imageUrl = artist.images?.firstOrNull()?.url, name = artist.name, followers = artist.followers?.total)
                 }, albumType = album.albumType, releaseDate = album.releaseDate, tracks = tracks.items, isUserLiking = isUserLiking, externalUrl = album.externalUrl)
+
+                _loadingState.value = LoadingState.DONE
             } catch (e: Exception) {
                 Log.d("Init album exception", e.toString())
+                _loadingState.value = LoadingState.ERROR
             }
         }
     }
 
     fun likeAlbum(album: Album) {
         viewModelScope.launch {
-            _loadingState.value = LoadingState.LOADING
             try {
                 if (album.isUserLiking) {
                     if (dislikeAlbumInternal(album)) {
@@ -73,9 +77,7 @@ class AlbumViewModel @Inject constructor(
                         _album.value = _album.value?.copy(isUserLiking = true)
                     }
                 }
-                _loadingState.value = LoadingState.DONE
             } catch (e: Exception) {
-                _loadingState.value = LoadingState.ERROR
             }
         }
 

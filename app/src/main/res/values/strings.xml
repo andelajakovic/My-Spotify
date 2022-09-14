@@ -24,9 +24,11 @@
     <string name="number_of_followers">Broj pratitelja: %s</string>
     <string name="popular_releases">Popularna izdanja</string>
     <string name="EMPTY"></string>
+    <string name="discover_music"><u>Otkrij glazbu</u></string>
+    <string name="discover_artists"><u>Otkrij izvođače</u></string>
 
     <string name="user_already_exists_error_message">Korisnik s ovom adresom već postoji.</string>
-    <string name="unexpected_error_has_occurred_error_message">Došlo je pogreške!</string>
+    <string name="unexpected_error_has_occurred_error_message">Došlo je do pogreške!</string>
 
     <string name="fragment_welcome_screen_registration_label" translatable="false">@string/registration</string>
     <string name="fragment_welcome_screen_login_label" translatable="false">@string/login</string>
@@ -62,7 +64,8 @@
     <string name="fragment_artist_details_unfollow_button_label" translatable="false">@string/unfollow</string>
     <string name="fragment_artist_details_number_of_followers_label" translatable="false">@string/number_of_followers</string>
     <string name="fragment_artist_details_popular_releases_title" translatable="false">@string/popular_releases</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="fragment_my_library_discover_music_link" translatable="false">@string/discover_music</string>
+    <string name="fragment_my_library_discover_artists_link" translatable="false">@string/discover_artists</string>
 
 </resources>

@@ -9,5 +9,5 @@ data class Artist(
     val name: String,
     val tracks: List<ApiTrackX> = listOf(),
     val followers: Int?,
-    val isUserFollowing: Boolean = false
+    var isUserFollowing: Boolean = false
 ) : Serializable

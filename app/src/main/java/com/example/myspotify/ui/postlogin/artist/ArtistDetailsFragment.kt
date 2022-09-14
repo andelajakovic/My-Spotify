@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
@@ -13,6 +14,7 @@ import com.example.myspotify.R
 import com.example.myspotify.data.model.Artist
 import com.example.myspotify.databinding.FragmentArtistDetailsBinding
 import com.example.myspotify.ui.postlogin.artist.adapter.PopularReleaseAdapter
+import com.example.myspotify.ui.state.LoadingState
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -62,6 +64,27 @@ class ArtistDetailsFragment : Fragment() {
 
         viewModel.popularReleases.observe(this.viewLifecycleOwner) {
             popularReleaseAdapter.updateData(it.toMutableList())
+        }
+
+        viewModel.loadingState.observe(this.viewLifecycleOwner) {
+            when (it) {
+                LoadingState.LOADING -> {
+                    binding.layout.visibility = View.GONE
+                    binding.progressBar.visibility = View.VISIBLE
+                }
+                LoadingState.DONE -> {
+                    binding.layout.visibility = View.VISIBLE
+                    binding.progressBar.visibility = View.GONE
+                }
+                LoadingState.ERROR -> {
+                    Toast.makeText(context, R.string.unexpected_error_has_occurred_error_message, Toast.LENGTH_SHORT).show()
+                    binding.layout.visibility = View.GONE
+                    binding.progressBar.visibility = View.GONE
+                }
+                else -> {
+                    // no-op
+                }
+            }
         }
     }
 

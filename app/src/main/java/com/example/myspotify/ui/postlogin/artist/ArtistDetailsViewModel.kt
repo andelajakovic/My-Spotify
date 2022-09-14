@@ -35,10 +35,17 @@ class ArtistDetailsViewModel @Inject constructor(
     private val _popularReleases = MutableLiveData<List<Album>>()
     val popularReleases: LiveData<List<Album>> = _popularReleases
 
-    private val accessToken: AccessToken = AccessToken(value = Config.SPOTIFY_ACCESS_TOKEN)
+    private lateinit var accessToken: AccessToken
+
+    init {
+        accessToken = AccessToken(value = Config.SPOTIFY_ACCESS_TOKEN)
+    }
 
     fun initArtist(artist: Artist) {
+        Log.d("Access token value", accessToken.value)
+
         viewModelScope.launch {
+            _loadingState.value = LoadingState.LOADING
             try {
 
                 val usersFollowings = herokuApiService.getUsersFollowings(applicationStorage.getLoggedInUserId())
@@ -52,20 +59,20 @@ class ArtistDetailsViewModel @Inject constructor(
 
                 initPopularReleasesList(artist)
 
+                _loadingState.value = LoadingState.DONE
+
             } catch (e: Exception) {
                 Log.d("Init artist exception", e.toString())
+                _loadingState.value = LoadingState.ERROR
             }
         }
     }
 
     private fun initPopularReleasesList(artist: Artist) {
         viewModelScope.launch {
-            _loadingState.value = LoadingState.LOADING
             try {
                 _popularReleases.value = getPopularReleases(artist)
-                _loadingState.value = LoadingState.DONE
             } catch (e: Exception) {
-                _loadingState.value = LoadingState.ERROR
             }
         }
     }
@@ -80,7 +87,7 @@ class ArtistDetailsViewModel @Inject constructor(
 
     fun followArtist(artist: Artist) {
         viewModelScope.launch {
-            _loadingState.value = LoadingState.LOADING
+//            _loadingState.value = LoadingState.LOADING
             try {
                 if (artist.isUserFollowing) {
                     if (unfollowArtistInternal(artist)){
@@ -91,9 +98,9 @@ class ArtistDetailsViewModel @Inject constructor(
                         _artist.value = _artist.value?.copy(isUserFollowing = true)
                     }
                 }
-                _loadingState.value = LoadingState.DONE
+//                _loadingState.value = LoadingState.DONE
             } catch (e: Exception) {
-                _loadingState.value = LoadingState.ERROR
+//                _loadingState.value = LoadingState.ERROR
             }
         }
 

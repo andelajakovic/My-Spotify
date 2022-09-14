@@ -75,6 +75,10 @@ class HomeFragment : Fragment() {
             newReleasesAdapter.updateData(it)
         }
         viewModel.albumsFromLikedArtists.observe(this.viewLifecycleOwner) {
+            if (it.isEmpty()) {
+                binding.albumsRecyclerView.visibility = View.GONE
+                binding.albumsLabel.visibility = View.GONE
+            }
             albumsFromLikedArtistsAdapter.updateData(it)
         }
 
@@ -90,6 +94,7 @@ class HomeFragment : Fragment() {
                 }
                 LoadingState.ERROR -> {
                     Toast.makeText(context, R.string.unexpected_error_has_occurred_error_message, Toast.LENGTH_SHORT).show()
+                    binding.homeMainLayout.visibility = View.GONE
                     binding.progressBar.visibility = View.GONE
                 }
                 else -> {

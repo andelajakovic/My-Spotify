@@ -8,8 +8,10 @@ import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -18,6 +20,9 @@ import com.example.myspotify.data.model.Album
 import com.example.myspotify.databinding.FragmentAlbumDetailsBinding
 import com.example.myspotify.ui.postlogin.album.adapter.ArtistAdapter
 import com.example.myspotify.ui.postlogin.album.adapter.CommentAdapter
+import com.example.myspotify.ui.postlogin.home.HomeFragmentDirections
+import com.example.myspotify.ui.postlogin.home.adapter.RecommendedArtistAdapter
+import com.example.myspotify.ui.state.LoadingState
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import dagger.hilt.android.AndroidEntryPoint
 import java.util.*
@@ -52,10 +57,35 @@ class AlbumDetailsFragment : Fragment() {
         viewModel.album.observe(this.viewLifecycleOwner) {
             initViews(it)
         }
+
+        viewModel.loadingState.observe(this.viewLifecycleOwner) {
+            when (it) {
+                LoadingState.LOADING -> {
+                    binding.layout.visibility = View.GONE
+                    binding.progressBar.visibility = View.VISIBLE
+                }
+                LoadingState.DONE -> {
+                    binding.layout.visibility = View.VISIBLE
+                    binding.progressBar.visibility = View.GONE
+                }
+                LoadingState.ERROR -> {
+                    Toast.makeText(context, R.string.unexpected_error_has_occurred_error_message, Toast.LENGTH_SHORT).show()
+                    binding.layout.visibility = View.GONE
+                    binding.progressBar.visibility = View.GONE
+                }
+                else -> {
+                    // no-op
+                }
+            }
+        }
     }
 
     private fun initViews(album: Album) {
-        artistAdapter = ArtistAdapter()
+
+        artistAdapter = ArtistAdapter(ArtistAdapter.OnClickListener {
+            findNavController().navigate(AlbumDetailsFragmentDirections.actionAlbumDetailsFragmentToArtistDetailsFragment(it))
+        })
+
         binding.artists.adapter = artistAdapter
 
         artistAdapter.updateData(album.artists.toMutableList())

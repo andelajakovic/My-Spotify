@@ -44,6 +44,12 @@ interface SpotifyApiService {
         @Query("ids") artistIds: String
     ): ApiArtistsResponse
 
+    @GET("albums")
+    suspend fun getSeveralAlbums(
+        @Header("Authorization") authorizationValue: String,
+        @Query("ids") artistIds: String
+    ): ApiSeveralAlbumsResponse
+
     @GET("albums/{album-id}/tracks/")
     suspend fun getAlbumTracks(
         @Header("Authorization") authorizationValue: String,
