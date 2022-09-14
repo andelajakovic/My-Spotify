@@ -18,7 +18,7 @@ class PopularReleaseAdapter(private val onClickListener: OnClickListener) : List
         private fun bind(album: Album) {
 
             binding.name.text = album.name
-            (album.releaseDate.substring(0, 4) + " • " + album.type.capitalize()).also { binding.details.text = it }
+            (album.releaseDate.substring(0, 4) + " • " + album.albumType.capitalize()).also { binding.details.text = it }
 
             Glide.with(binding.root)
                 .load(album.imageUrl)

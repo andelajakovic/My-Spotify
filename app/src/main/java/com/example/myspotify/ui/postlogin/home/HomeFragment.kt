@@ -45,12 +45,12 @@ class HomeFragment : Fragment() {
         })
 
         newReleasesAdapter = AlbumAdapter(AlbumAdapter.OnClickListener {
-//            findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToAlbumFragment(it))
+            findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToAlbumDetailsFragment(it))
 //            viewModel.getAlbumDetails(album)
         })
 
         albumsFromLikedArtistsAdapter = AlbumAdapter(AlbumAdapter.OnClickListener {
-//            findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToAlbumFragment(it))
+            findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToAlbumDetailsFragment(it))
 //            viewModel.getAlbumDetails(album)
         })
 

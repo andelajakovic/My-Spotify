@@ -10,7 +10,6 @@ import com.example.myspotify.data.local.ApplicationStorage
 import com.example.myspotify.data.model.AccessToken
 import com.example.myspotify.data.model.Album
 import com.example.myspotify.data.model.Artist
-import com.example.myspotify.data.model.Track
 import com.example.myspotify.network.HerokuApiService
 import com.example.myspotify.network.SpotifyApiService
 import com.example.myspotify.ui.state.LoadingState
@@ -44,9 +43,10 @@ class HomeViewModel @Inject constructor(
     private val _albumLoadingState = MutableLiveData<LoadingState>()
     val albumLoadingState: LiveData<LoadingState> = _albumLoadingState
 
-    private val accessToken: AccessToken = AccessToken(value = Config.SPOTIFY_ACCESS_TOKEN)
+    lateinit var accessToken: AccessToken
 
     init {
+        accessToken = AccessToken(value = Config.SPOTIFY_ACCESS_TOKEN)
         initLists()
     }
 
@@ -76,7 +76,7 @@ class HomeViewModel @Inject constructor(
             albums.addAll(spotifyApiService.getArtistAlbums("${accessToken.type} ${accessToken.value}", artistId).items.map {
                 Album(id = it.id, imageUrl = it.images.firstOrNull()?.url, name = it.name, artists = it.artists.map { artist ->
                     Artist(id = artist.id, imageUrl = artist.images?.firstOrNull()?.url, name = artist.name, followers = artist.followers?.total)
-                }, type = it.type, releaseDate = it.releaseDate)
+                }, albumType = it.type, releaseDate = it.releaseDate, externalUrl = it.externalUrls.spotify)
             })
         }
         albums.shuffle()
@@ -87,7 +87,7 @@ class HomeViewModel @Inject constructor(
         return spotifyApiService.getNewReleases("${accessToken.type} ${accessToken.value}").albums.items.map {
             Album(id = it.id, imageUrl = it.images.firstOrNull()?.url, name = it.name, artists = it.artists.map { artist ->
                 Artist(id = artist.id, imageUrl = artist.images?.firstOrNull()?.url, name = artist.name, followers = artist.followers?.total)
-            }, type = it.type, releaseDate = it.releaseDate)
+            }, albumType = it.type, releaseDate = it.releaseDate, externalUrl = it.externalUrls.spotify)
         }.toMutableList()
     }
 

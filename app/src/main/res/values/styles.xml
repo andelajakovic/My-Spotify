@@ -80,4 +80,19 @@
         <item name="colorAccent">@color/green</item>
     </style>
 
+
+    <style name="AppBottomSheetDialogTheme"
+        parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/AppModalStyle</item>
+        <item name="colorPrimary">@color/green</item>
+        <item name="colorAccent">@color/green</item>
+    </style>
+
+    <style name="AppModalStyle"
+        parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/rounded_dialog_background</item>
+        <item name="colorPrimary">@color/green</item>
+        <item name="colorAccent">@color/green</item>
+    </style>
+
 </resources>

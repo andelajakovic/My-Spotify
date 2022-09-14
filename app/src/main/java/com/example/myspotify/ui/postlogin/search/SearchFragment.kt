@@ -9,6 +9,7 @@ import android.widget.SearchView
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.myspotify.R
+import com.example.myspotify.data.model.Album
 import com.example.myspotify.data.model.Artist
 import com.example.myspotify.databinding.FragmentSearchBinding
 import com.example.myspotify.ui.postlogin.search.adapter.SearchAdapter
@@ -52,6 +53,22 @@ class SearchFragment : Fragment() {
                         )
                     )
                 )
+            } else if (it.type == "album") {
+                findNavController().navigate(
+                    SearchFragmentDirections.actionSearchFragmentToAlbumDetailsFragment(
+                        Album(
+                            id = it.id,
+                            imageUrl = it.imageUrl,
+                            name = it.name,
+                            artists = it.artists,
+                            albumType = it.albumType,
+                            releaseDate = it.releaseDate,
+                            externalUrl = it.externalUrl
+                        )
+                    )
+                )
+            } else {
+                // no-op
             }
 //            resetSearchView()
         })

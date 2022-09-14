@@ -74,7 +74,7 @@ class ArtistDetailsViewModel @Inject constructor(
         return spotifyApiService.getArtistAlbums("${accessToken.type} ${accessToken.value}", artist.id).items.map {
             Album(id = it.id, imageUrl = it.images.firstOrNull()?.url, name = it.name, artists = it.artists.map { artist ->
                 Artist(id = artist.id, imageUrl = artist.images?.firstOrNull()?.url, name = artist.name, followers = artist.followers?.total)
-            }, type = it.albumType, releaseDate = it.releaseDate)
+            }, albumType = it.albumType, releaseDate = it.releaseDate, externalUrl = it.externalUrls.spotify)
         }.toMutableList().subList(0, 4)
     }
 

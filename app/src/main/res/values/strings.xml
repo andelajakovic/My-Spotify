@@ -23,6 +23,7 @@
     <string name="unfollow">Pratim</string>
     <string name="number_of_followers">Broj pratitelja: %s</string>
     <string name="popular_releases">Popularna izdanja</string>
+    <string name="EMPTY"></string>
 
     <string name="user_already_exists_error_message">Korisnik s ovom adresom već postoji.</string>
     <string name="unexpected_error_has_occurred_error_message">Došlo je pogreške!</string>
@@ -61,5 +62,7 @@
     <string name="fragment_artist_details_unfollow_button_label" translatable="false">@string/unfollow</string>
     <string name="fragment_artist_details_number_of_followers_label" translatable="false">@string/number_of_followers</string>
     <string name="fragment_artist_details_popular_releases_title" translatable="false">@string/popular_releases</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_homeFragment_to_artistDetailsFragment"
             app:destination="@id/artistDetailsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_albumDetailsFragment"
+            app:destination="@id/albumDetailsFragment" />
     </fragment>
     <fragment
         android:id="@+id/searchFragment"
@@ -22,6 +25,9 @@
         <action
             android:id="@+id/action_searchFragment_to_artistDetailsFragment"
             app:destination="@id/artistDetailsFragment" />
+        <action
+            android:id="@+id/action_searchFragment_to_albumDetailsFragment"
+            app:destination="@id/albumDetailsFragment" />
     </fragment>
     <fragment
         android:id="@+id/myLibraryFragment"
@@ -31,6 +37,9 @@
         <action
             android:id="@+id/action_myLibraryFragment_to_artistDetailsFragment"
             app:destination="@id/artistDetailsFragment" />
+        <action
+            android:id="@+id/action_myLibraryFragment_to_albumDetailsFragment"
+            app:destination="@id/albumDetailsFragment" />
     </fragment>
     <fragment
         android:id="@+id/logoutFragment"
@@ -54,5 +63,20 @@
         <argument
             android:name="artist"
             app:argType="com.example.myspotify.data.model.Artist" />
+        <action
+            android:id="@+id/action_artistDetailsFragment_to_albumDetailsFragment"
+            app:destination="@id/albumDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/albumDetailsFragment"
+        android:name="com.example.myspotify.ui.postlogin.album.AlbumDetailsFragment"
+        android:label="fragment_album_details"
+        tools:layout="@layout/fragment_album_details" >
+        <action
+            android:id="@+id/action_albumDetailsFragment_to_artistDetailsFragment"
+            app:destination="@id/artistDetailsFragment" />
+        <argument
+            android:name="album"
+            app:argType="com.example.myspotify.data.model.Album" />
     </fragment>
 </navigation>

@@ -52,4 +52,7 @@
     <dimen name="fragment_artist_details_albums_top_margin">@dimen/margin_xlarge</dimen>
     <dimen name="fragment_artist_details_start_margin">@dimen/margin_normal</dimen>
 
+    <dimen name="fragment_album_image_top_margin">@dimen/margin_mid_large</dimen>
+    <dimen name="fragment_album_top_margin">@dimen/margin_small</dimen>
+
 </resources>

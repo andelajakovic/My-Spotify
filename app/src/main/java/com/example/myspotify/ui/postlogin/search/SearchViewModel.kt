@@ -1,5 +1,6 @@
 package com.example.myspotify.ui.postlogin.search
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -9,8 +10,6 @@ import com.example.myspotify.data.model.AccessToken
 import com.example.myspotify.data.model.Artist
 import com.example.myspotify.data.model.SearchItem
 import com.example.myspotify.network.SpotifyApiService
-import com.example.myspotify.ui.state.ArtistState
-import com.example.myspotify.ui.state.ListState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -32,14 +31,17 @@ class SearchViewModel @Inject constructor(
     private val _filterAlbums = MutableLiveData<Boolean>()
     val filterAlbums: LiveData<Boolean> = _filterAlbums
 
-    private val accessToken: AccessToken = AccessToken(value = Config.SPOTIFY_ACCESS_TOKEN)
+    lateinit var accessToken: AccessToken
 
     init {
+        accessToken = AccessToken(value = Config.SPOTIFY_ACCESS_TOKEN)
         _filterArtists.value = false
         _filterAlbums.value = false
     }
 
     fun search(query: String) {
+        Log.d("Access token value", accessToken.value)
+
         if (query.isEmpty()) {
             return
         }
@@ -75,11 +77,14 @@ class SearchViewModel @Inject constructor(
         val searchList = mutableListOf<SearchItem>()
         searchList.addAll(
             (spotifyApiService.searchAlbums("${accessToken.type} ${accessToken.value}", query).albums.items.map {
-                SearchItem(id = it.id, name = it.name, type = it.type, imageUrl = it.images.firstOrNull()?.url)
+                SearchItem(id = it.id, name = it.name, type = it.type, imageUrl = it.images.firstOrNull()?.url, artists = it.artists.map { artist ->
+                    Artist(id = artist.id, imageUrl = artist.images?.firstOrNull()?.url, name = artist.name, followers = artist.followers?.total)
+                }, releaseDate = it.releaseDate, albumType = it.albumType, externalUrl = it.externalUrls.spotify)
             })
         )
 
         _searchedItems.value = searchList
+
     }
 
     private suspend fun searchArtistsAndAlbumsInternal(query: String) {
@@ -92,7 +97,9 @@ class SearchViewModel @Inject constructor(
 
         searchList.addAll(
             (spotifyApiService.searchAlbums("${accessToken.type} ${accessToken.value}", query).albums.items.map {
-                SearchItem(id = it.id, name = it.name, type = it.type, imageUrl = it.images.firstOrNull()?.url)
+                SearchItem(id = it.id, name = it.name, type = it.type, imageUrl = it.images.firstOrNull()?.url, artists = it.artists.map { artist ->
+                    Artist(id = artist.id, imageUrl = artist.images?.firstOrNull()?.url, name = artist.name, followers = artist.followers?.total)
+                }, releaseDate = it.releaseDate, albumType = it.albumType, externalUrl = it.externalUrls.spotify)
             })
         )
 
