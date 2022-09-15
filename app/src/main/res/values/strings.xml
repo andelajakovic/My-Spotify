@@ -1,3 +1,71 @@
 <resources>
     <string name="app_name">My Spotify</string>
+    <string name="login">Prijava</string>
+    <string name="registration">Besplatna registracija</string>
+    <string name="continue_with_google">Nastavi s Googleom</string>
+    <string name="continue_with_facebook">Nastavi s Facebookom</string>
+    <string name="welcome_screen_title">Milijuni pjesama.\nBesplatno na Spotifyju.</string>
+    <string name="enter_your_email">Koja je vaša adresa e-pošte?</string>
+    <string name="enter_new_password">Izradite novu zaporku</string>
+    <string name="enter_your_name">Kako se zovete?</string>
+    <string name="new_password_helper_text">Upotrijebite najmanje 8 znakova.</string>
+    <string name="create_account">Izradi račun</string>
+    <string name="email">E-pošta</string>
+    <string name="password">Zaporka</string>
+    <string name="login_error_message">Pogrešna adresa e-pošte ili zaporka</string>
+    <string name="choose_artists_you_like">Odaberite 3 ili više izvođača koji vam se sviđaju.</string>
+    <string name="search">Tražilica</string>
+    <string name="next">Dalje</string>
+    <string name="recommended_albums">Albumi vaših omiljenih izvođača</string>
+    <string name="new_releases">Nova izdanja</string>
+    <string name="recommended_artists">Preporučeni izvođači</string>
+    <string name="follow">Prati</string>
+    <string name="unfollow">Pratim</string>
+    <string name="number_of_followers">Broj pratitelja: %s</string>
+    <string name="popular_releases">Popularna izdanja</string>
+    <string name="EMPTY"></string>
+    <string name="discover_music"><u>Otkrij glazbu</u></string>
+    <string name="discover_artists"><u>Otkrij izvođače</u></string>
+
+    <string name="user_already_exists_error_message">Korisnik s ovom adresom već postoji.</string>
+    <string name="unexpected_error_has_occurred_error_message">Došlo je do pogreške!</string>
+
+    <string name="fragment_welcome_screen_registration_label" translatable="false">@string/registration</string>
+    <string name="fragment_welcome_screen_login_label" translatable="false">@string/login</string>
+    <string name="fragment_welcome_screen_google_label" translatable="false">@string/continue_with_google</string>
+    <string name="fragment_welcome_screen_facebook_label" translatable="false">@string/continue_with_facebook</string>
+    <string name="fragment_welcome_screen_title" translatable="false">@string/welcome_screen_title</string>
+
+    <string name="fragment_signup_email_label" translatable="false">@string/enter_your_email</string>
+    <string name="fragment_signup_new_password_label" translatable="false">@string/enter_new_password</string>
+    <string name="fragment_signup_name_label" translatable="false">@string/enter_your_name</string>
+    <string name="fragment_signup_new_password_helper_text" translatable="false">@string/new_password_helper_text</string>
+    <string name="fragment_signup_create_account_label" translatable="false">@string/create_account</string>
+
+    <string name="fragment_login_email_label" translatable="false">@string/email</string>
+    <string name="fragment_login_password_label" translatable="false">@string/password</string>
+    <string name="fragment_login_login_label" translatable="false">@string/login</string>
+    <string name="fragment_login_error_message" translatable="false">@string/login_error_message</string>
+
+    <string name="fragment_choose_artists_title" translatable="false">@string/choose_artists_you_like</string>
+    <string name="fragment_choose_artists_search_label" translatable="false">@string/search</string>
+    <string name="fragment_choose_artists_button_label" translatable="false">@string/next</string>
+
+    <string name="bottom_navigation_menu_search_label">Pretraži</string>
+    <string name="bottom_navigation_menu_home_label">Početna</string>
+    <string name="bottom_navigation_menu_my_library_label">Moja zbirka</string>
+    <string name="bottom_navigation_menu_logout_label">Odjava</string>
+
+    <string name="fragment_home_recommended_albums_label" translatable="false">@string/recommended_albums</string>
+    <string name="fragment_home_new_releases_label" translatable="false">@string/new_releases</string>
+    <string name="fragment_home_recommended_artists_label" translatable="false">@string/recommended_artists</string>
+
+    <string name="fragment_artist_details_follow_button_label" translatable="false">@string/follow</string>
+    <string name="fragment_artist_details_unfollow_button_label" translatable="false">@string/unfollow</string>
+    <string name="fragment_artist_details_number_of_followers_label" translatable="false">@string/number_of_followers</string>
+    <string name="fragment_artist_details_popular_releases_title" translatable="false">@string/popular_releases</string>
+
+    <string name="fragment_my_library_discover_music_link" translatable="false">@string/discover_music</string>
+    <string name="fragment_my_library_discover_artists_link" translatable="false">@string/discover_artists</string>
+
 </resources>

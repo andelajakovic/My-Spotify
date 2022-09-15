@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="linear_layout_padding">24dp</dimen>
+    <dimen name="constraint_layout_padding">16dp</dimen>
+    <dimen name="title_text_size">24sp</dimen>
+    <dimen name="button_radius">90dp</dimen>
+    <dimen name="button_layout_margin">4dp</dimen>
+    <dimen name="white_button_padding">34dp</dimen>
+    <dimen name="search_edit_text_padding">12dp</dimen>
+    <dimen name="search_edit_text_height">48dp</dimen>
+
+    <dimen name="margin_baseline_distance">4dp</dimen>
+    <dimen name="margin_small">8dp</dimen>
+    <dimen name="margin_medium">12dp</dimen>
+    <dimen name="margin_normal">16dp</dimen>
+    <dimen name="margin_mid_large">20dp</dimen>
+    <dimen name="margin_large">24dp</dimen>
+    <dimen name="margin_xlarge">34dp</dimen>
+    <dimen name="margin_xxlarge">46dp</dimen>
+    <dimen name="margin_xxxlarge">70dp</dimen>
+
+    <dimen name="fragment_welcome_screen_spotify_icon_dimens">48dp</dimen>
+    <dimen name="fragment_welcome_screen_spotify_icon_bottom_margin">16dp</dimen>
+    <dimen name="fragment_welcome_screen_title_bottom_margin">34dp</dimen>
+    <dimen name="fragment_welcome_screen_login_link_bottom_margin">46dp</dimen>
+
+    <dimen name="fragment_login_text_input_layout_top_margin">@dimen/margin_xlarge</dimen>
+    <dimen name="fragment_login_button_top_margin">@dimen/margin_xlarge</dimen>
+
+    <dimen name="fragment_choose_artists_search_edit_text_top_margin">@dimen/margin_small</dimen>
+    <dimen name="fragment_choose_artists_title_width">220dp</dimen>
+    <dimen name="fragment_choose_artists_recycler_view_top_margin">@dimen/margin_xlarge</dimen>
+    <dimen name="fragment_choose_artists_progress_bar_dimens">20dp</dimen>
+
+    <dimen name="artist_view_check_icon_padding">4dp</dimen>
+
+    <dimen name="item_view_name_top_margin">@dimen/margin_small</dimen>
+    <dimen name="item_view_padding">8dp</dimen>
+
+    <dimen name="search_item_view_image_dimens">50dp</dimen>
+    <dimen name="search_item_view_name_start_margin">@dimen/margin_small</dimen>
+    <dimen name="search_item_view_padding">8dp</dimen>
+
+    <dimen name="fragment_home_layout_top_margin">@dimen/margin_normal</dimen>
+    <dimen name="fragment_home_title_start_margin">@dimen/margin_normal</dimen>
+    <dimen name="fragment_home_title_top_margin">@dimen/margin_normal</dimen>
+    <dimen name="fragment_home_recycler_view_padding">@dimen/margin_small</dimen>
+
+    <dimen name="fragment_artist_details_followers_label_top_margin">@dimen/margin_normal</dimen>
+    <dimen name="fragment_artist_details_follow_button_top_margin">@dimen/margin_small</dimen>
+    <dimen name="fragment_artist_details_tracks_top_margin">@dimen/margin_large</dimen>
+    <dimen name="fragment_artist_details_albums_top_margin">@dimen/margin_xlarge</dimen>
+    <dimen name="fragment_artist_details_start_margin">@dimen/margin_normal</dimen>
+
+    <dimen name="fragment_album_image_top_margin">@dimen/margin_mid_large</dimen>
+    <dimen name="fragment_album_top_margin">@dimen/margin_small</dimen>
+
+</resources>

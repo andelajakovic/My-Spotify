@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/linear_layout_padding"
+    tools:context=".ui.prelogin.signup.SignupFragment">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/name_text_input_layout"
+        style="@style/TextInputLayoutStyle"
+        android:hint="@string/fragment_signup_name_label"
+        app:errorTextColor="@color/error_color">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/name_edit_text"
+            android:inputType="textCapWords"
+            style="@style/TextInputEditTextStyle" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/email_text_input_layout"
+        style="@style/TextInputLayoutStyle"
+        android:hint="@string/fragment_signup_email_label"
+        app:errorTextColor="@color/error_color">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/email_edit_text"
+            style="@style/TextInputEditTextStyle" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/password_text_input_layout"
+        style="@style/TextInputLayoutStyle"
+        android:hint="@string/fragment_signup_new_password_label"
+        app:helperText="@string/fragment_signup_new_password_helper_text"
+        app:helperTextTextColor="@color/white"
+        app:endIconMode="password_toggle"
+        app:endIconTint="?attr/colorOnSecondary">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/password_edit_text"
+            style="@style/TextInputEditTextStyle"
+            android:inputType="textPassword" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/create_account_button"
+        android:text="@string/fragment_signup_create_account_label"
+        android:layout_marginTop="@dimen/fragment_login_button_top_margin"
+        style="@style/WhiteButtonStyle" />
+
+</LinearLayout>

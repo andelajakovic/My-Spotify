@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.prelogin.welcome.WelcomeFragment">
+
+    <ImageView
+        android:id="@+id/spotify_icon"
+        android:layout_width="@dimen/fragment_welcome_screen_spotify_icon_dimens"
+        android:layout_height="@dimen/fragment_welcome_screen_spotify_icon_dimens"
+        android:layout_marginBottom="@dimen/fragment_welcome_screen_spotify_icon_bottom_margin"
+        android:src="@drawable/spotify_icon_white"
+        app:layout_constraintBottom_toTopOf="@+id/title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linear_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/linear_layout_padding"
+        app:layout_constraintBottom_toTopOf="@id/login_link"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/register_link"
+            style="@style/PrimaryButtonStyle"
+            android:text="@string/fragment_welcome_screen_registration_label" />
+
+        <Button
+            android:id="@+id/register_using_google"
+            style="@style/SecondaryButtonStyle"
+            android:drawableLeft="@drawable/google_icon"
+            android:text="@string/fragment_welcome_screen_google_label" />
+
+        <Button
+            android:id="@+id/register_using_facebook"
+            style="@style/SecondaryButtonStyle"
+            android:drawableLeft="@drawable/facebook_icon"
+            android:text="@string/fragment_welcome_screen_facebook_label" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/title"
+        style="@style/TitleStyle"
+        android:layout_marginBottom="@dimen/fragment_welcome_screen_title_bottom_margin"
+        android:text="@string/fragment_welcome_screen_title"
+        app:layout_constraintBottom_toTopOf="@id/linear_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/login_link"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/fragment_welcome_screen_login_link_bottom_margin"
+        android:text="@string/fragment_welcome_screen_login_label"
+        android:fontFamily="sans-serif-black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

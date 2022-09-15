@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="TitleStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="fontFamily">sans-serif-black</item>
+        <item name="android:textSize">@dimen/title_text_size</item>
+    </style>
+
+    <style name="PrimaryButtonStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/button_layout_margin</item>
+        <item name="android:background">@drawable/primary_button_selector</item>
+        <item name="fontFamily">sans-serif-black</item>
+        <item name="backgroundTint">@null</item>
+    </style>
+
+    <style name="SecondaryButtonStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/button_layout_margin</item>
+        <item name="android:background">@drawable/secondary_button_selector</item>
+        <item name="android:textColor">?attr/colorOnSecondary</item>
+        <item name="fontFamily">sans-serif-black</item>
+        <item name="backgroundTint">@null</item>
+    </style>
+
+    <style name="FollowButtonStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/follow_button_selector</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:minWidth">0dp</item>
+        <item name="android:minHeight">0dp</item>
+        <item name="fontFamily">sans-serif-black</item>
+        <item name="android:textColor">?attr/colorOnSecondary</item>
+        <item name="backgroundTint">@null</item>
+    </style>
+
+    <style name="WhiteButtonStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:background">@drawable/white_button_selector</item>
+        <item name="android:clickable">false</item>
+        <item name="fontFamily">sans-serif-black</item>
+        <item name="android:paddingEnd">@dimen/white_button_padding</item>
+        <item name="android:paddingStart">@dimen/white_button_padding</item>
+        <item name="android:textColor">@color/dark_gray</item>
+        <item name="backgroundTint">@null</item>
+    </style>
+
+    <style name="TextInputLayoutStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/fragment_login_text_input_layout_top_margin</item>
+        <item name="android:textColorHint">?attr/colorOnSecondary</item>
+        <item name="boxStrokeColor">?attr/colorPrimary</item>
+    </style>
+
+    <style name="TextInputEditTextStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textColor">?attr/colorOnSecondary</item>
+    </style>
+
+    <style name="SearchViewStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/search_edit_text_height</item>
+        <item name="android:padding">@dimen/search_edit_text_padding</item>
+        <item name="android:textColorHint">?attr/colorSecondary</item>
+        <item name="android:iconifiedByDefault">false</item>
+        <item name="android:background">@drawable/search_background</item>
+    </style>
+
+    <style name="ProgressBarStyle" parent="@style/Theme.AppCompat">
+        <item name="colorAccent">@color/green</item>
+    </style>
+
+
+    <style name="AppBottomSheetDialogTheme"
+        parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/AppModalStyle</item>
+        <item name="colorPrimary">@color/green</item>
+        <item name="colorAccent">@color/green</item>
+    </style>
+
+    <style name="AppModalStyle"
+        parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/rounded_dialog_background</item>
+        <item name="colorPrimary">@color/green</item>
+        <item name="colorAccent">@color/green</item>
+    </style>
+
+</resources>
